@@ -2002,11 +2002,20 @@ textarea.form-message{
 
 
 
+/* Chages by BAAAAAP */
 
+@media(max-width: 500px){
+    #felicific-logo {
+        width: 15vh;
+    }
+}
 
-
-
-
+@media(min-width: 480px){
+    #felicific-logo {
+        width: 20vh;
+        padding-left: 4vh;
+    }
+}
 
 
 
