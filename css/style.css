@@ -212,7 +212,7 @@ header{
 
 
 .subtitle{
-    font-size: 22px;
+    font-size: 22px;logo
     font-weight: bold;
 }
 
@@ -2005,14 +2005,14 @@ textarea.form-message{
 /* Chages by BAAAAAP */
 
 @media(max-width: 500px){
-    #felicific-logo {
+    #felicific-logo, .felicific-logo {
         width: 15vh;
     }
 }
 
 @media(min-width: 480px){
-    #felicific-logo {
-        width: 20vh;
+    #felicific-logo, .felicific-logo {
+        width: 15vh;
         padding-left: 4vh;
     }
 }

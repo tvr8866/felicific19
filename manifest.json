@@ -1,0 +1,25 @@
+{
+    "short_name": "Felicific'19",
+    "name": "Felicific 2019",
+    "icons": [
+      {
+        "src": "/felicific19/images/logo.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "/felicific19/images/logo.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/felicific19/images/logo.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }
+    ],
+    "start_url": "/felicific19/index.html",
+    "background_color": "#FFFFFF",
+    "theme_color": "RED",
+    "display": "standalone"
+  }
