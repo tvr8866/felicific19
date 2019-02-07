@@ -212,7 +212,7 @@ header{
 
 
 .subtitle{
-    font-size: 22px;logo
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -2013,7 +2013,7 @@ textarea.form-message{
         background-repeat:no-repeat;
         background-position:right;
         background-position-y: 50%;
-        background-size: 100vw; 
+        background-size: 100vw;
 
     }
     /* #revo_logo{
