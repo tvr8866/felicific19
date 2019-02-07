@@ -2008,12 +2008,36 @@ textarea.form-message{
     #felicific-logo, .felicific-logo {
         width: 15vh;
     }
+    .home {
+        background-image:url('/felicific19/images/back13.jpeg');
+        background-repeat:no-repeat;
+        background-position:right;
+        background-position-y: 50%;
+        background-size: 100vw; 
+
+    }
+    /* #revo_logo{
+        display: block;
+        width:120vw; position: absolute;
+        left: -10vw;
+        
+    } */
 }
 
 @media(min-width: 480px){
     #felicific-logo, .felicific-logo {
         width: 15vh;
         padding-left: 4vh;
+    }
+
+    .home{
+        background-image:url('/felicific19/images/back1.jpeg');
+        background-repeat:no-repeat;
+        background-position: right;
+        background-size: 90vw;
+    }
+    #revo_logo{
+        display: none;
     }
 }
 
