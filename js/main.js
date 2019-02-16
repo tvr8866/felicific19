@@ -1,16 +1,41 @@
 'use strict';
-
+var showDays;
 $(document).ready( function() {	
-    function showDays(){
+    
+    var days = getUrlJsonSync('https://anmolsaxena10.github.io/felicific-data/days.json');
+    
+    for(var i=1 ; i<=days.length ; i++){
+        var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${i}.json`);
+        console.log(i+' = '+events);
+        if(events==undefined)continue;
+        for(var j=0 ; j<events.length ; j++){
+            var item = `<div class="cbp-item day${i}">
+                        <a href="portfolio/index.html">
+                            <figure class="fig">
+                                <img src="images/work-1.jpg" alt="">
+                                <figcaption>
+                                    <h3>${events[j].event_name}</h3>
+                                    <p>${days[i-1].date}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        </div>`;
+            // console.log(item);
+            $('#grid-container').append(item);
+        }
+    }
+
+
+
     // HOME PAGE HEIGHT
     jQuery(window).load(function() {
+        
             // will first fade out the loading animation
         jQuery(".loader").fadeOut();
             // will fade out the whole DIV that covers the website.
         jQuery(".preloader").delay(1000).fadeOut("slow");
     });
 
-     
     // HOME PAGE HEIGHT
     if ($('.home, .portfolio-hero').length) {
         function fullhome() {
@@ -83,7 +108,7 @@ $(document).ready( function() {
 
 
 // PORTFOLIO CONTENT
-    
+
     $('#grid-container').cubeportfolio({
         layoutMode: 'grid',
         filters: '.portfolio-filter',
@@ -135,7 +160,6 @@ $(document).ready( function() {
                 }
             }
     }); 
-    }
 
     //TWITTER
     if ($('.widget-twitter .tweet').length) {
@@ -195,9 +219,6 @@ $(document).ready( function() {
             , });
         });
     }
-
-
-
 
 }); // document ready end 
 
