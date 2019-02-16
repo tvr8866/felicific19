@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready( function() {	
-
+    function showDays(){
     // HOME PAGE HEIGHT
     jQuery(window).load(function() {
             // will first fade out the loading animation
@@ -82,7 +82,8 @@ $(document).ready( function() {
    //  });
 
 
-// PORTFOLIO CONTENT  
+// PORTFOLIO CONTENT
+    
     $('#grid-container').cubeportfolio({
         layoutMode: 'grid',
         filters: '.portfolio-filter',
@@ -134,7 +135,7 @@ $(document).ready( function() {
                 }
             }
     }); 
-
+    }
 
     //TWITTER
     if ($('.widget-twitter .tweet').length) {
