@@ -1,7 +1,7 @@
 'use strict';
 var showDays;
 $(document).ready( function() {	
-    
+    if(window.location.pathname=="index.html"){
     var days = getUrlJsonSync('https://anmolsaxena10.github.io/felicific-data/days.json');
     
     for(var i=1 ; i<=days.length ; i++){
@@ -24,7 +24,7 @@ $(document).ready( function() {
             $('#grid-container').append(item);
         }
     }
-
+    }
 
 
     // HOME PAGE HEIGHT
@@ -223,7 +223,18 @@ $(document).ready( function() {
 }); // document ready end 
 
 
+function getUrlJsonSync(url){
 
+    var jqxhr = $.ajax({
+        type: "GET",
+        url: url,
+        dataType: 'json',
+        cache: false,
+        async: false
+    });
+    var response = {valid: jqxhr.statusText,  data: jqxhr.responseJSON};
+    return response.data;
+}
 
 
 

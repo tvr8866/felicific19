@@ -1999,6 +1999,72 @@ textarea.form-message{
 }
 
 
+.our-team{
+    position: relative;
+    margin: 35px 0;
+}
+.our-team  img{
+    width:100%;
+    height: auto;
+    z-index:1;
+    transform:translateY(0px);
+    transition: all 0.50s ease;
+}
+.our-team:hover img{
+    transform:translateY(-60px);
+}
+.our-team .team-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    opacity:0;
+    color: #2b2f3e;
+    padding: 20px 0;
+    text-align: center;
+    background:#fff;
+    transform:translateY(0px);
+    transition: all 0.50s ease-in-out 0s;
+}
+.our-team:hover .team-content{
+    transform:translateY(46px);
+    opacity:1;
+}
+.our-team .team-title{
+    font-size:19px;
+    color:#444;
+    margin:0;
+    letter-spacing:1px;
+}
+.our-team .team-title small{
+    display: block;
+    color:#444;
+    margin:1% 0 3% 0;
+    font-size:12px;
+    text-transform: capitalize;
+}
+.our-team .social-link{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.our-team .social-link li{
+    display: inline-block;
+    margin-right:2%;
+}
+.our-team .social-link li a{
+    color:#444;
+    transition: all 0.50s ease;
+}
+.our-team .social-link li a:hover{
+    color: #e143eb;
+}
+@media screen and (max-width: 767px){
+    .our-team{
+        margin-bottom: 15%;
+    }
+}
+
 
 
 
@@ -2015,6 +2081,10 @@ textarea.form-message{
         background-position-y: 50%;
         background-size: 100vw;
 
+    }
+
+    .our-team{
+        width: 30vw;
     }
     /* #revo_logo{
         display: block;
@@ -2038,6 +2108,9 @@ textarea.form-message{
     }
     #revo_logo{
         display: none;
+    }
+    .our-team{
+        width: 15vw;
     }
 }
 
