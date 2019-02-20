@@ -1,7 +1,11 @@
 'use strict';
 var showDays;
 $(document).ready( function() {	
-    if(window.location.pathname=="index.html"){
+    console.log(window.location);
+    if(window.location.pathname=="/" || 
+        window.location.pathname=="/index.html" || 
+        window.location.pathname=="/felicific19/index.html" || 
+        window.location.pathname=="/felicific19/"){
     var days = getUrlJsonSync('https://anmolsaxena10.github.io/felicific-data/days.json');
     
     for(var i=1 ; i<=days.length ; i++){
@@ -12,7 +16,7 @@ $(document).ready( function() {
             var item = `<div class="cbp-item day${i}">
                         <a href="portfolio/index.html">
                             <figure class="fig">
-                                <img src="images/work-1.jpg" alt="">
+                                <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}" alt="">
                                 <figcaption>
                                     <h3>${events[j].event_name}</h3>
                                     <p>${days[i-1].date}</p>
@@ -219,7 +223,9 @@ $(document).ready( function() {
             , });
         });
     }
-
+    setTimeout(function(){
+        $("#d1").trigger('click');
+    }, 1000);
 }); // document ready end 
 
 
