@@ -24,6 +24,29 @@
         <!-- <h1>Animated Page Transition</h1> -->
 
         <a class="cd-btn" id="but" href="../event_page/index.html" data-type="page-transition" style="display: none;"></a>
+        <script>
+          
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+  
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+  
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+  };
+  
+  
+  var url = getUrlParameter('url');
+          document.getElementById("abc").href="../event_page/index.html"+url; 
+          
+          </script>
       </div>
     </div>
   </main>
@@ -35,6 +58,7 @@
   <script src="js/jquery-2.1.1.js"></script>
   <script>
     jQuery(document).ready(function (event) {
+      var url1 = getUrlParameter("url");
       var isAnimating = false,
         newLocation = '';
       firstLoad = false;
@@ -102,9 +126,27 @@
               isAnimating = false;
               $('.cd-loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
             });
-
+            var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+  
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+  
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+  };
+  
+  
+  
             if (!transitionsSupported()) isAnimating = false;
-            window.location.href = '';
+            
+           // var url = getUrlParameter("url");
+            window.location.href = `index.html?url=${url1}`;
           }, delay);
 
           if (url != window.location && bool) {

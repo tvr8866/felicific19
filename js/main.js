@@ -1,16 +1,45 @@
 'use strict';
-
+var showDays;
 $(document).ready( function() {	
+    console.log(window.location);
+    if(window.location.pathname=="/" || 
+        window.location.pathname=="/index.html" || 
+        window.location.pathname=="/felicific19/index.html" || 
+        window.location.pathname=="/felicific19/"){
+    var days = getUrlJsonSync('https://anmolsaxena10.github.io/felicific-data/days.json');
+    
+    for(var i=1 ; i<=days.length ; i++){
+        var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${i}.json`);
+        console.log(i+' = '+events);
+        if(events==undefined)continue;
+        for(var j=0 ; j<events.length ; j++){
+            var item = `<div class="cbp-item day${i}">
+                        <a href="portfolio/index.html?url=${i}">
+                            <figure class="fig">
+                                <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}" alt="">
+                                <figcaption>
+                                    <h3>${events[j].event_name}</h3>
+                                    <p>${days[i-1].date}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        </div>`;
+            // console.log(item);
+            $('#grid-container').append(item);
+        }
+    }
+    }
+
 
     // HOME PAGE HEIGHT
     jQuery(window).load(function() {
+        
             // will first fade out the loading animation
         jQuery(".loader").fadeOut();
             // will fade out the whole DIV that covers the website.
         jQuery(".preloader").delay(1000).fadeOut("slow");
     });
 
-     
     // HOME PAGE HEIGHT
     if ($('.home, .portfolio-hero').length) {
         function fullhome() {
@@ -82,7 +111,8 @@ $(document).ready( function() {
    //  });
 
 
-// PORTFOLIO CONTENT  
+// PORTFOLIO CONTENT
+
     $('#grid-container').cubeportfolio({
         layoutMode: 'grid',
         filters: '.portfolio-filter',
@@ -134,7 +164,6 @@ $(document).ready( function() {
                 }
             }
     }); 
-
 
     //TWITTER
     if ($('.widget-twitter .tweet').length) {
@@ -194,44 +223,37 @@ $(document).ready( function() {
             , });
         });
     }
-
-
-
-
+    setTimeout(function(){
+        $("#d1").trigger('click');
+    }, 1000);
 }); // document ready end 
 
 
+function getUrlJsonSync(url){
+
+    var jqxhr = $.ajax({
+        type: "GET",
+        url: url,
+        dataType: 'json',
+        cache: false,
+        async: false
+    });
+    var response = {valid: jqxhr.statusText,  data: jqxhr.responseJSON};
+    return response.data;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+  
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+  
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+  };
