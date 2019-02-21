@@ -21,9 +21,9 @@
 
     <div class="cd-index cd-main-content">
       <div>
-        <h1>Animated Page Transition</h1>
+        <!-- <h1>Animated Page Transition</h1> -->
 
-        <a class="cd-btn" id="but" href="../event_page/index.html" data-type="page-transition">Start animation</a>
+        <a class="cd-btn" id="but" href="../event_page/index.html" data-type="page-transition" style="display: none;"></a>
       </div>
     </div>
   </main>
@@ -87,11 +87,11 @@
       function loadNewContent(url, bool) {
         url = ('' == url) ? 'index.html' : url;
         var newSection = 'cd-' + url.replace('.html', '');
-        var section = $('<div class="cd-main-content ' + newSection + '"></div>');
+        var section = $('html');
 
-        section.load(url + ' .cd-main-content > *', function (event) {
-          // load new content and replace <main> content with the new one
-          $('main').html(section);
+        // section.load(url, function (event) {
+        //   // load new content and replace <main> content with the new one
+        //   $('main').html(section);
           //if browser doesn't support CSS transitions - dont wait for the end of transitions
           var delay = (transitionsSupported()) ? 1200 : 0;
           setTimeout(function () {
@@ -104,6 +104,7 @@
             });
 
             if (!transitionsSupported()) isAnimating = false;
+            window.location.href = '';
           }, delay);
 
           if (url != window.location && bool) {
@@ -111,7 +112,7 @@
             //if the new page was triggered by a 'popstate' event, don't add it
             window.history.pushState({ path: url }, '', url);
           }
-        });
+        // });
       }
 
       function transitionsSupported() {
