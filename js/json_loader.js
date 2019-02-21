@@ -1,12 +1,9 @@
-jQuery(document).ready(function(event){
-  
-    
-    
-        var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day1.json`);
-        console.log(i+' = '+events);
-    //    if(events==undefined)continue;
-        for(var j=0 ; j<events.length ; j++){
-            var item = `
+jQuery(document).ready(function (event) {
+  var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day1.json`);
+  console.log(events);
+  //    if(events==undefined)continue;
+  for (var j = 0; j < events.length; j++) {
+    var item = `
             <div id="slide1" class="slide">
              
             </div>
@@ -30,21 +27,21 @@ jQuery(document).ready(function(event){
               <img src="https://lorempixel.com/640/480/abstract/4/"> 
             </div>
             `;
-            console.log(item);
-            $('event_container').append(item);
-        
-  //  showDays();
+    console.log(item);
+    $('#event_container').append(item);
+
+    //  showDays();
+  }
 });
+function getUrlJsonSync(url) {
 
-function getUrlJsonSync(url){
-
-    var jqxhr = $.ajax({
-        type: "GET",
-        url: url,
-        dataType: 'json',
-        cache: false,
-        async: false
-    });
-    var response = {valid: jqxhr.statusText,  data: jqxhr.responseJSON};
-    return response.data;
+  var jqxhr = $.ajax({
+    type: "GET",
+    url: url,
+    dataType: 'json',
+    cache: false,
+    async: false
+  });
+  var response = { valid: jqxhr.statusText, data: jqxhr.responseJSON };
+  return response.data;
 }
