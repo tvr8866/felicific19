@@ -32,9 +32,9 @@ jQuery(document).ready(function (event) {
                 <h3>Winning_prize : ${events[j].Winning_prize}</h3>
                 <h3>Additional_remark : ${events[j].Additional_remark}</h3>
               </div>
-              <br>
+              <p>
               <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">
-              
+              </p>
             
             </div>
             `;

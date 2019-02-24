@@ -6,7 +6,7 @@
   <title>Events | Felicific19</title>
   <meta charset="UTF-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
 
   <link rel="icon" href="/felicific19/images/logo.png">
   <link rel="manifest" href="/felicific19/manifest.json">
@@ -46,21 +46,30 @@
 
     .slide {
       position: relative;
-      padding: 25vh 10%;
+      
       min-height: 100vh;
-      width: 100vw;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+      transform-style: inherit;
+    }
+    .slide1 {
+      position: relative;
+      
+      min-height: 100vh;
+      width: 100%;
       box-sizing: border-box;
       box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
       transform-style: inherit;
     }
 
     img {
-      position: absolute;
-      top: 50%;
-      left: 35%;
+      position: relative;
+      top: 70%;
+      left: 55%;
       width: 320px;
       height: 240px;
-      transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
+     
       padding: 10px;
       border-radius: 5px;
       background: rgba(240, 230, 220, .7);
@@ -68,12 +77,23 @@
     }
 
     img:last-of-type {
-      transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+ 
     }
 
     .slide:before {
       content: "";
       position: absolute;
+      padding: 5%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+    }
+    .slide1:before {
+      content: "";
+      position: absolute;
+      padding: 5%;
       top: 0;
       bottom: 0;
       left: 0;
@@ -82,25 +102,19 @@
     }
 
     .title {
-      width: 120%;
+      width: 80%;
       padding: 5%;
       border-radius: 5px;
       background: rgba(240, 230, 220, .7);
       box-shadow: 0 0 8px rgba(0, 0, 0, .7);
     }
 
-    .slide:nth-child(2n) .title {
-      margin-left: 0;
-      margin-right: auto;
-    }
-
-    .slide:nth-child(2n+1) .title {
-      margin-left: auto;
-      margin-right: 0;
-    }
-
+    
     .slide,
     .slide:before {
+      background: 50% 50% / cover;
+    }.slide1,
+    .slide1:before {
       background: 50% 50% / cover;
     }
 
@@ -175,7 +189,7 @@
   <main>
     <div class="cd-about cd-main-content">
       <div id="event_container">
-        <div id="title" class="slide header">
+        <div id="title" class="slide1 header">
     
         </div>
       </div>
