@@ -3,7 +3,7 @@ jQuery(document).ready(function (event) {
   console.log(days[0]['poster_url']);
   var url = getUrlParameter('url');
   if (url != 7) {
-    $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/' + days[url]['poster_url'] + ')');
+    $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/' + days[url-1]['poster_url'] + ')');
     $('#title').css("background-size", 'auto 100vh');
     $('#title').css("background-repeat", 'no-repeat');
     var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${url}.json`);
@@ -32,7 +32,7 @@ jQuery(document).ready(function (event) {
                 <h3>Winning_prize : ${events[j].Winning_prize}</h3>
                 <h3>Additional_remark : ${events[j].Additional_remark}</h3>
               </div>
-              <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">
+              <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">7
             
             </div>
             `;
