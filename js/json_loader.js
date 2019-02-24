@@ -15,7 +15,7 @@ jQuery(document).ready(function (event) {
     for (var j = 0; j < events.length; j++) {
       if (j % 2 == 0) {
         var item = `
-           <div id="slide"1> </div>
+           <div id="slide1"> </div>
             
             <div id="slide2" class="slide">
               <div class="title">
@@ -69,13 +69,14 @@ jQuery(document).ready(function (event) {
     //  showDays();
   }
   else {
+$('#title').append("<h2>Performing Arts</h2>");
     var cultural = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/cultural.json`);
     for (var j = 0; j < cultural.length; j++) {
       if (j % 2 == 0) {
         var item = `
-           <div id="slide"1> </div>
+           <div> </div>
             
-            <div id="slide2" class="slide">
+            <div id="slide411" class="slide">
               <div class="title">
                 <h1>${cultural[j].name}</h1>
                 <h3>Description : ${cultural[j].description}</h3>
@@ -87,9 +88,9 @@ jQuery(document).ready(function (event) {
       }
       else {
         var item = `
-      <div> </div>
+        <div> </div>
        
-       <div id="slide411" class="slide">
+       <div id="slide2" class="slide">
        <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}">
          <div class="title">
            <h1>${cultural[j].name}</h1>
@@ -102,6 +103,7 @@ jQuery(document).ready(function (event) {
 
       }
       console.log(item);
+      
       $('#event_container').append(item);
     }
     //  showDays();
