@@ -27,35 +27,19 @@ p {
 }
 
 .slide {
-  position: relative;
+  
   padding: 25vh 10%;
   min-height: 100vh;
   width: 100vw;
   box-sizing: border-box;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
-	transform-style: inherit;
+	
 }
 
-img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
-
-img:last-of-type {
-  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}
 
 .slide:before {
   content: "";
-  position: absolute;
+  
   top: 0;
   bottom: 0;
   left: 0;

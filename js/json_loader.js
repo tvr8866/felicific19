@@ -32,7 +32,9 @@ jQuery(document).ready(function (event) {
                 <h3>Winning_prize : ${events[j].Winning_prize}</h3>
                 <h3>Additional_remark : ${events[j].Additional_remark}</h3>
               </div>
-              <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">7
+              <br>
+              <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">
+              
             
             </div>
             `;
@@ -42,7 +44,7 @@ jQuery(document).ready(function (event) {
       <div> </div>
        
        <div id="slide411" class="slide">
-       <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">
+       
          <div class="title">
            <h1>${events[j].event_name}</h1>
            <h3>${events[j].tagline}</h3>
@@ -58,7 +60,9 @@ jQuery(document).ready(function (event) {
            <h3>Additional_remark : ${events[j].Additional_remark}</h3>
          </div>
         
-       
+         
+         <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}">
+         
        </div>
        `;
 
