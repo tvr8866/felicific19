@@ -1,8 +1,10 @@
 jQuery(document).ready(function (event) {
   var days = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/days.json`);
   console.log(days[0]['poster_url']);
-  $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/'+days[1]['poster_url']+')');
   var url = getUrlParameter('url');
+  $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/'+days[url]['poster_url']+')');
+  $('#title').css("background-size", 'auto 100vh');
+  $('#title').css("background-repeat", 'no-repeat');
   var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${url}.json`);
 
   

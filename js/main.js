@@ -28,6 +28,25 @@ $(document).ready( function() {
             $('#grid-container').append(item);
         }
     }
+
+    var cultural = getUrlJsonSync('https://anmolsaxena10.github.io/felicific-data/Days/cultural.json');
+    console.log(cultural);
+    // if(cultural!=undefined){
+    for(var j=0 ; j<cultural.length ; j++){
+        var item = `<div class="cbp-item cultural">
+                    <a href="#">
+                        <figure class="fig">
+                            <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}" alt="">
+                            <figcaption>
+                                <h3>${cultural[j].name}</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </div>`;
+        // console.log(item);
+        $('#grid-container').append(item);
+    }
+    // }
     }
 
 
