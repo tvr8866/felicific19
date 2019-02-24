@@ -2,18 +2,19 @@ jQuery(document).ready(function (event) {
   var days = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/days.json`);
   console.log(days[0]['poster_url']);
   var url = getUrlParameter('url');
-  $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/'+days[url]['poster_url']+')');
-  $('#title').css("background-size", 'auto 100vh');
-  $('#title').css("background-repeat", 'no-repeat');
-  var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${url}.json`);
+  if (url != 7) {
+    $('#title').css("background-image", 'url(https://anmolsaxena10.github.io/felicific-data/' + days[url]['poster_url'] + ')');
+    $('#title').css("background-size", 'auto 100vh');
+    $('#title').css("background-repeat", 'no-repeat');
+    var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${url}.json`);
 
-  
 
-  console.log(events);
-  //    if(events==undefined)continue;
-  for (var j = 0; j < events.length; j++) {
-    if(j%2==0){
-    var item = `
+
+    console.log(events);
+    //    if(events==undefined)continue;
+    for (var j = 0; j < events.length; j++) {
+      if (j % 2 == 0) {
+        var item = `
            <div id="slide"1> </div>
             
             <div id="slide2" class="slide">
@@ -35,10 +36,9 @@ jQuery(document).ready(function (event) {
             
             </div>
             `;
-    }
-    else
-    {
-      var item = `
+      }
+      else {
+        var item = `
       <div> </div>
        
        <div id="slide411" class="slide">
@@ -49,7 +49,7 @@ jQuery(document).ready(function (event) {
            <h3>Date : ${events[j].date}</h3>
            <h3>Time : ${events[j].time}</h3>
        
-           <h3>Venue : ${events[j].venue} </h3>
+           <h3>Venue : ${events[j].venue} < anything related pubg...it’s banned in FOT/h3>
            <h3>Team_size : ${events[j].team_size}</h3>
            <h3>Description : ${events[j].description}</h3>
            <h3>Fees : ${events[j].fees}</h3>
@@ -62,26 +62,64 @@ jQuery(document).ready(function (event) {
        </div>
        `;
 
+      }
+      console.log(item);
+      $('#event_container').append(item);
     }
-    console.log(item);
-    $('#event_container').append(item);
+    //  showDays();
+  }
+  else {
+    var cultural = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/cultural.json`);
+    for (var j = 0; j < cultural.length; j++) {
+      if (j % 2 == 0) {
+        var item = `
+           <div id="slide"1> </div>
+            
+            <div id="slide2" class="slide">
+              <div class="title">
+                <h1>${cultural[j].name}</h1>
+                <h3>Description : ${cultural[j].description}</h3>
+              </div>
+              <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}">
+            
+            </div>
+            `;
+      }
+      else {
+        var item = `
+      <div> </div>
+       
+       <div id="slide411" class="slide">
+       <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}">
+         <div class="title">
+           <h1>${cultural[j].name}</h1>
+           <h3>Description : ${cultural[j].description}</h3>
+         </div>
+        
+       
+       </div>
+       `;
 
+      }
+      console.log(item);
+      $('#event_container').append(item);
+    }
     //  showDays();
   }
 });
 
 var getUrlParameter = function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
-      sURLVariables = sPageURL.split('&'),
-      sParameterName,
-      i;
+    sURLVariables = sPageURL.split('&'),
+    sParameterName,
+    i;
 
   for (i = 0; i < sURLVariables.length; i++) {
-      sParameterName = sURLVariables[i].split('=');
+    sParameterName = sURLVariables[i].split('=');
 
-      if (sParameterName[0] === sParam) {
-          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-      }
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+    }
   }
 };
 

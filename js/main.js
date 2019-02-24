@@ -34,7 +34,7 @@ $(document).ready( function() {
     // if(cultural!=undefined){
     for(var j=0 ; j<cultural.length ; j++){
         var item = `<div class="cbp-item cultural">
-                    <a href="#">
+                    <a href="portfolio/index.html?url=7">
                         <figure class="fig">
                             <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}" alt="">
                             <figcaption>
