@@ -14,7 +14,7 @@ $(document).ready( function() {
         if(events==undefined)continue;
         for(var j=0 ; j<events.length ; j++){
             var item = `<div class="cbp-item day${i}">
-                        <a href="portfolio/index.html?url=${i}">
+                        <a href="event_page/index.html?url=${i}">
                             <figure class="fig">
                                 <img src="https://anmolsaxena10.github.io/felicific-data/${events[j].poster}" alt="">
                                 <figcaption>
@@ -34,7 +34,7 @@ $(document).ready( function() {
     // if(cultural!=undefined){
     for(var j=0 ; j<cultural.length ; j++){
         var item = `<div class="cbp-item cultural">
-                    <a href="portfolio/index.html?url=7">
+                    <a href="event_page/index.html?url=7">
                         <figure class="fig">
                             <img src="https://anmolsaxena10.github.io/felicific-data/${cultural[j].poster_url}" alt="">
                             <figcaption>
