@@ -8,7 +8,9 @@ jQuery(document).ready(function (event) {
     $('#title').css("background-repeat", 'no-repeat');
     var events = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/day${url}.json`);
 
-
+    if($(window).width()<500){
+      $('#title').css("background-size", '100vw auto');
+    }
 
     console.log(events);
     //    if(events==undefined)continue;
@@ -51,7 +53,7 @@ jQuery(document).ready(function (event) {
            <h3>Date : ${events[j].date}</h3>
            <h3>Time : ${events[j].time}</h3>
        
-           <h3>Venue : ${events[j].venue} < anything related pubg...it’s banned in FOT/h3>
+           <h3>Venue : ${events[j].venue}</h3>
            <h3>Team_size : ${events[j].team_size}</h3>
            <h3>Description : ${events[j].description}</h3>
            <h3>Fees : ${events[j].fees}</h3>
@@ -74,6 +76,7 @@ jQuery(document).ready(function (event) {
   }
   else {
 $('#title').append("<h2>Performing Arts</h2>");
+$('#title').css("display", "none");
     var cultural = getUrlJsonSync(`https://anmolsaxena10.github.io/felicific-data/Days/cultural.json`);
     for (var j = 0; j < cultural.length; j++) {
       if (j % 2 == 0) {
