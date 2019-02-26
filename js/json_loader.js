@@ -29,7 +29,9 @@ jQuery(document).ready(function (event) {
                 <h3>Venue : ${events[j].venue} </h3>
                 <h3>Team_size : ${events[j].team_size}</h3>
                 <h3>Description : ${events[j].description}</h3>
+                <h3>Student Coordinator : ${events[j].student_coordinator}</h3>
                 <h3>Fees : ${events[j].fees}</h3>
+                <h3>Rules : ${events[j].rules}</h3>
                 <h3>Registration_type : ${events[j].Registration_type}</h3>
                 <h3>Registration_Start_Date : ${events[j].Registration_Start_date}</h3>
                 <h3>Registration_Closure_Date : ${events[j].Registration_Closure_date}</h3>
