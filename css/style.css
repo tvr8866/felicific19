@@ -2075,7 +2075,7 @@ textarea.form-message{
         width: 15vh;
     }
     .home {
-        background-image:url('/felicific19/images/back13.jpeg');
+        background-image:url('images/back13.jpeg');
         background-repeat:no-repeat;
         background-position:right;
         background-position-y: 50%;
@@ -2101,7 +2101,7 @@ textarea.form-message{
     }
 
     .home{
-        background-image:url('/felicific19/images/back1.jpeg');
+        background-image:url('images/back1.jpeg');
         background-repeat:no-repeat;
         background-position: right;
         background-size: 90vw;
